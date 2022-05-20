@@ -1,14 +1,8 @@
-//i//import { DehazeTwoTone } from "@material-ui/icons";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./HistoriquedemandeList.css";
-//import { DataGrid } from "@material-ui/data-grid";
-//import { DeleteOutline } from "@material-ui/icons";
-//import { Link } from "react-router-dom";
-//import "./product.css";
-//import Chart from "../../components/chart/Chart"
-//import {productData} from "../../dummyData"
-//import { Publish } from "@material-ui/icons";
+//import Search from"./components/Search";
 
 export default function HistoriquedemandeList() {
   
@@ -27,11 +21,16 @@ const response = await axios.get("http://localhost:3005/conge")
       }
   };
  
-    console.log("data=>" , data);
-    
+    console.log("data=>" , data);  
+
+
+
+
+
         return (
-          <div style={{marginTop: "1px", width:"5000px"}}>
-          <table className="styled-table">
+          <div className={"container-table"}> 
+          <div className={"sub-container"}>
+            <table className="styled-table">
             
             <thead>
               <tr>
@@ -40,6 +39,7 @@ const response = await axios.get("http://localhost:3005/conge")
                 <th  style={{textAlign: "Center"}}>date_debut</th>
                 <th  style={{textAlign: "Center"}}>date_retour</th>
                 <th  style={{textAlign: "Center"}}>nombre_jrs</th>
+                <th  style={{textAlign: "Center"}}>status</th>
                 
           </tr>
           </thead>
@@ -47,6 +47,8 @@ const response = await axios.get("http://localhost:3005/conge")
             {data && data.map((item, index) =>{
 
     return(
+
+
       <tr key={index}>
         <th scope="row" >{index +1}</th>
     
@@ -55,13 +57,23 @@ const response = await axios.get("http://localhost:3005/conge")
         <td>{item.date_retour}</td>
         <td>{item.nombre_jrs}</td>
         
-
+         <td>
+        <button className="btn btn-edit">Accepter</button>
+           
+           <Link to={`/delete/${item.id}`}>
+            <button className="btn btn-delete">refuser</button>
+            </Link>
+             </td>
     </tr>
+    
     );
 })}
            </tbody>
           </table>
           </div>
+          </div>
+            
+          
         );
          };    
       

@@ -1,35 +1,38 @@
 import Sidebar from "./components/sidebar/Sidebar";
-import Topbar from "./components/topbar/Topbar";
+
 import "./App.css";
+import Navbar from "./components/Navbar";
 import Home from "./pages/home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import UserList from "./pages/userList/UserList";
-import User from "./pages/user/User";
-//import NewUser from "./pages/newUser/user";
-import ProductList from "./pages/Historiquedemande/HistoriquedemandeList";
+import EditUser from "./pages/user/EditUser";
 import Cordonnee from "./pages/cordonnee/cordonnee";
-import NewProduct from "./pages/cordonnee/cordonnee";
 import HistoriquedemandeList from "./pages/Historiquedemande/HistoriquedemandeList";
+
 
 
 function App() {
   return (
     <Router>
-      <Topbar />
+      <Navbar/> 
+      
       <div className="container">
+        
         <Sidebar />
+       
         <Switch>
+          
           <Route exact path="/">
             <Home />
           </Route>
           <Route path="/userList">
             <UserList />
           </Route>
-          <Route path="/user">
-            <User/>
+          <Route path="/Edituser">
+            <EditUser/>
           </Route>
-          <Route path="/user">
-            <User />
+          <Route path="/EditUser">
+            <EditUser />
           </Route>
           <Route path="/HistoriquedemandeList">
             <HistoriquedemandeList />

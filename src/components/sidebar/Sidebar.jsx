@@ -66,7 +66,7 @@ export default function Sidebar() {
               </li>
             </Link>
            
-            <Link to="/user" className="link">
+            <Link to="/Edituser" className="link">
               <li className="sidebarListItem">
               Gestion des employés
               </li>
