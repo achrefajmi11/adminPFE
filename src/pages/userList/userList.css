@@ -56,18 +56,14 @@
   cursor: pointer;
 }
 .btn-edit {
-  background-color: #81a135;
+  background-color:  rgb(74, 74, 232);
+  
+  color: black;
 }
 
 .btn-delete {
   background-color: aqua;
 
-
-
-}
-.btn-view {
-  background-color: aquamarine;
-  color: black;
 }
 
 .tab-content{

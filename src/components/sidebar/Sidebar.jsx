@@ -17,17 +17,19 @@ import { Link } from "react-router-dom";
 
 export default function Sidebar() {
   return (
+   
     <div className="sidebar">
       <div className="sidebarWrapper">
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
-            
+
             <li className="sidebarListItem active">
               <BarChart className="sidebarIcon" />
               Reports
             </li>
-            
+           
+    
           </ul>
         </div>
         <div className="sidebarMenu">
@@ -41,41 +43,26 @@ export default function Sidebar() {
               </li>
             </Link>
 
-
-            <Link to="/HistoriquedemandeList" className="link">
-              <li className="sidebarListItem">
-                <Storefront className="sidebarIcon" />
-                Historique des demandes
-              </li>
-            </Link>
-
-            
-              <li className="sidebarListItem">
-                <DynamicFeed className="sidebarIcon" />
-                user
-              </li>
-            
-            </ul>
+          </ul>
         </div>
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Gestion des Employés</h3>
           <ul className="sidebarList">
-          <Link to="/userList" className="link">
+            <Link to="/HistoriquedemandeList" className="link">
               <li className="sidebarListItem">
-                userList
+                Historique des demandes
               </li>
             </Link>
-           
+            <Link to="/userList" className="link">
+              <li className="sidebarListItem">
+                Liste des employés
+              </li>
+            </Link>
+  
             <Link to="/Edituser" className="link">
               <li className="sidebarListItem">
-              Gestion des employés
+                Ajouter un employé
               </li>
-            </Link>
-
-            <Link to="/cordonee" className="link">
-            <li className="sidebarListItem">
-            Gestion des employés
-            </li>   
             </Link>
           </ul>
         </div>
@@ -90,7 +77,9 @@ export default function Sidebar() {
               <ChatBubbleOutline className="sidebarIcon" />
               Messages
             </li>
+         
           </ul>
+     
         </div>
       </div>
     </div>
